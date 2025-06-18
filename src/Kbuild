@@ -1,6 +1,8 @@
 obj-m		:= realtek_dsa.o
+ccflags-y       := -DCONFIG_NET_DSA_REALTEK_MDIO=1
+ccflags-y       += -DCONFIG_NET_DSA_REALTEK_SMI=1
 realtek_dsa-y	:= rtl83xx.o realtek-mdio.o realtek-smi.o
 
-obj-m           := rtl8365mb.o
+obj-m           += rtl8365mb.o
 
-obj-m           := tag_rtl8_4.o
+obj-m           += tag_rtl8_4.o
