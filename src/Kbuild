@@ -1,0 +1,6 @@
+obj-m		:= realtek_dsa.o
+realtek_dsa-y	:= rtl83xx.o realtek-mdio.o realtek-smi.o
+
+obj-m           := rtl8365mb.o
+
+obj-m           := tag_rtl8_4.o

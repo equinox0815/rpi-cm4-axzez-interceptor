@@ -1,0 +1,106 @@
+// Axzez Interceptor Switch
+/dts-v1/;
+/plugin/;
+
+/ {
+        fragment@0 {
+                target-path = "/";
+                __overlay__ {
+                        switch0: switch0 {
+                                compatible = "realtek,rtl8365mb";
+                                dsa,member = <0x00 0x00>;
+                                mdio-gpios = <&gpio 0x2c 0x06>;
+                                mdc-gpios = <&gpio 0x2d 0x06>;
+
+                                ports {
+                                        #address-cells = <0x01>;
+                                        #size-cells = <0x00>;
+                                        port@0 {
+                                                reg = <0x00>;
+                                                label = "cpu";
+                                                phy-mode = "internal";
+                                                phy-handle = <&swphy0>;
+                                                dsa-tag-protocol = "rtl8_4t";
+                                                ethernet = <&genet>;
+                                        };
+                                        switch0_port1: port@1 {
+                                                reg = <0x01>;
+                                                label = "swp0";
+                                                phy-mode = "internal";
+                                                phy-handle = <&swphy1>;
+                                        };
+                                        switch0_port2: port@2 {
+                                                reg = <0x02>;
+                                                label = "swp1";
+                                                phy-mode = "internal";
+                                                phy-handle = <&swphy2>;
+                                        };
+                                        switch0_port3: port@3 {
+                                                reg = <0x03>;
+                                                label = "swp2";
+                                                phy-mode = "internal";
+                                                phy-handle = <&swphy3>;
+                                        };
+                                        switch0_port4: port@4 {
+                                                reg = <0x04>;
+                                                label = "swp3";
+                                                phy-mode = "internal";
+                                                phy-handle = <&swphy4>;
+                                        };
+
+                                        switch0_ext1: port@6 {
+                                                reg = <0x06>;
+                                                label = "ext1";
+                                                phy-mode = "rgmii";
+                                                tx-internal-delay-ps = <0x7d0>;
+                                                rx-internal-delay-ps = <0x00>;
+                                                fixed-link {
+                                                        speed = <0x3e8>;
+                                                        full-duplex;
+                                                };
+                                        };
+
+                                        switch0_ext2: port@7 {
+                                                reg = <0x07>;
+                                                label = "ext2";
+                                                phy-mode = "rgmii";
+                                                tx-internal-delay-ps = <0x7d0>;
+                                                rx-internal-delay-ps = <0x00>;
+                                                fixed-link {
+                                                        speed = <0x3e8>;
+                                                        full-duplex;
+                                                };
+                                        };
+                                };
+
+                                mdio {
+                                        compatible = "realtek,smi-mdio";
+                                        #address-cells = <0x01>;
+                                        #size-cells = <0x00>;
+                                        swphy0: phy@0 {
+                                                reg = <0x00>;
+                                        };
+                                        swphy1: phy@1 {
+                                                reg = <0x01>;
+                                        };
+                                        swphy2: phy@2 {
+                                                reg = <0x02>;
+                                        };
+                                        swphy3: phy@3 {
+                                                reg = <0x03>;
+                                        };
+                                        swphy4: phy@4 {
+                                                reg = <0x04>;
+                                        };
+                                };
+                        };
+                };
+        };
+
+        __overrides__ {
+                port1name = <&switch0_port1>,"label";
+                port2name = <&switch0_port2>,"label";
+                port3name = <&switch0_port3>,"label";
+                port4name = <&switch0_port4>,"label";
+        };
+};
