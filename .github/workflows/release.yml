@@ -11,7 +11,8 @@ jobs:
         with:
           buildpackage-opts: --no-sign
           docker-image: debian:bookworm-slim
-      - uses: actions/upload-artifact@v4
+      - uses: alexellis/upload-assets@0.4.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
-          path: debian/artifacts/
-          name: debian_package
+          asset_paths: '["./debian/artifacts/*.deb"]'
