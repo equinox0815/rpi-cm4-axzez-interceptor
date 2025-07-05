@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+if [ "$1" = "configure" ]; then
+	make --no-print-directory -C /usr/src/$DKMS_NAME-$DKMS_VERSION/dt build
+	make --no-print-directory -C /usr/src/$DKMS_NAME-$DKMS_VERSION/dt install
+	make --no-print-directory -C /usr/src/$DKMS_NAME-$DKMS_VERSION/dt clean
+fi

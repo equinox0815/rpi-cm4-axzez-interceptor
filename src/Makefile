@@ -1,5 +1,7 @@
-KDIR ?= /lib/modules/`uname -r`/build
-MODULES_DIR := /lib/modules/`uname -r`/extra
+KVERSION ?= $(shell uname -r)
+
+KDIR := /lib/modules/$(KVERSION)/build
+MODULES_DIR := /lib/modules/$(KVERSION)/extra
 
 build:
 	$(MAKE) -C $(KDIR)  M=$$PWD

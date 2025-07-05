@@ -1,0 +1,13 @@
+Source: axzez-interceptor-switch-dkms
+Section: kernel
+Priority: optional
+Maintainer: Christian Pointner <equinox@spreadspace.org>
+Build-Depends: debhelper-compat (= 13),
+	dh-sequence-dkms,
+Standards-Version: 4.6.0
+Rules-Requires-Root: no
+
+Package: axzez-interceptor-switch-dkms
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, device-tree-compiler
+Description: Ethernet Switch Driver and Device-Tree overlay for Axzez Interceptor Board
