@@ -5,6 +5,8 @@ on:
 jobs:
   build-debs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,8 +16,6 @@ jobs:
           buildpackage-opts: --no-sign
           docker-image: debian:bookworm-slim
       - name: Upload release assets
-        permissions:
-          contents: write
         uses: alexellis/upload-assets@0.4.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
