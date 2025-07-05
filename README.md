@@ -1,15 +1,16 @@
 # DKMS package for Axzez Interceptor Board on RaspberrryPI OS
 
-For this to work you need to a kernel that has DSA enabled (see https://github.com/raspberrypi/linux/issues/6899).
-As this writing only the newest kernel (6.12.34-1+rpt1~bookworm) has this module enabled.
+For this to work you need to run a kernel that has DSA enabled (see https://github.com/raspberrypi/linux/issues/6899).
+As of this writing only the newest kernel (6.12.34-1+rpt1~bookworm) has this module enabled.
 In order successfully build the kernel modules and the device-tree files you need to install a couple of
 packages:
 
 ```
 apt update
-apt install linux-headers-rpi-v8 linux-headers-rpi-2712 dkms device-tree-compiler
+apt install linux-headers-rpi-v8 dkms device-tree-compiler
 ```
 
+If you are using a CM5 you have to also install `linux-headers-rpi-2712`.
 Now download the deb package from the release page and install it with:
 
 ```
