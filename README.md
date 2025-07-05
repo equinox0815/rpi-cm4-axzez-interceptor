@@ -1,8 +1,8 @@
-# DKMS package for Axzez Interceptor Board on RaspberrryPI OS
+# DKMS package for Axzez Interceptor Board on RaspberryPI OS
 
 For this to work you need to run a kernel that has DSA enabled (see https://github.com/raspberrypi/linux/issues/6899).
 As of this writing only the newest kernel (6.12.34-1+rpt1~bookworm) has this module enabled.
-In order successfully build the kernel modules and the device-tree files you need to install a couple of
+In order to successfully build the kernel modules and the device-tree files you need to install a couple of
 packages:
 
 ```
