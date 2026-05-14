@@ -1,3 +1,9 @@
+axzez-interceptor-switch-dkms (6.18-1) unstable; urgency=medium
+
+  * upgrade for Linux 6.18
+
+ -- Christian Pointner <equinox@spreadspace.org>  Thu, 14 May 2026 23:15:36 +0200
+
 axzez-interceptor-switch-dkms (6.12-1) unstable; urgency=medium
 
   * initial package
