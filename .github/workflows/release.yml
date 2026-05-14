@@ -9,12 +9,12 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Build package
         uses: jtdor/build-deb-action@v1
         with:
           buildpackage-opts: --no-sign
-          docker-image: debian:bookworm-slim
+          docker-image: debian:trixie-slim
       - name: Upload release assets
         uses: alexellis/upload-assets@0.4.0
         env:
