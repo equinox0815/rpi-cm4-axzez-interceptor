@@ -1,4 +1,4 @@
-PACKAGE_VERSION="6.12"
+PACKAGE_VERSION="6.18"
 PACKAGE_NAME="axzez-interceptor-switch"
 CLEAN="make clean"
 MAKE[0]="make -Bj KERNEL_VERSION=${kernelver} build"
